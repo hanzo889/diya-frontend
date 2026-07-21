@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
+import type { Buku } from "../../types/buku";
 
-export interface Buku {
-  id: number;
-  judul: string;
-  list_kategori_id: number;
-  stock: number;
-}
+
 
 export const useGetAll = () => {
   const [buku, setBuku] = useState<Buku[] | null>(null);
@@ -29,6 +25,7 @@ export const useGetAll = () => {
         console.log("after", response);
         setBuku(data);
       } catch (err) {
+        alert(err)
       } finally {
         setLoading(false);
       }
