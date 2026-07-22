@@ -18,11 +18,7 @@ export const useGetAll = () => {
         if (!response.ok) {
           throw new Error("failed to fetch data");
         }
-
-        console.log("before", response);
-
         const data = await response.json();
-        console.log("after", response);
         setBuku(data);
       } catch (err) {
         alert(err)
