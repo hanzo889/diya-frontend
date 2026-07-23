@@ -38,8 +38,6 @@ export default function Buku() {
       stock: resquestUpdate!.stock,
     });
   };
-
-  console.log(id);
   if (loading) return <div>loading...</div>;
   return (
     <>
