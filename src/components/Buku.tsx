@@ -8,7 +8,7 @@ import { useDelete } from "../hooks/delete/useDelete";
 export default function Buku() {
   const [selectBuku, setSelectBuku] = useState<Buku | null>(null);
   const [requestCreate, setRequestCreate] = useState<RequestBuku | null>(null);
-  const [resquestUpdate, setRequestUpdate] = useState<RequestBuku | null>(null);
+  const [requestUpdate, setRequestUpdate] = useState<RequestBuku | null>(null);
   const [id, setId] = useState<number>(0);
   //hooks
   const { data, loading } = useGetAll();
@@ -33,13 +33,11 @@ export default function Buku() {
   };
   const handleUpdate = async () => {
     await updateBuku({
-      judul: resquestUpdate!.judul,
-      list_kategori_id: resquestUpdate!.list_kategori_id,
-      stock: resquestUpdate!.stock,
+      judul: requestUpdate!.judul,
+      list_kategori_id: requestUpdate!.list_kategori_id,
+      stock: requestUpdate!.stock,
     });
   };
-
-  console.log(id);
   if (loading) return <div>loading...</div>;
   return (
     <>
