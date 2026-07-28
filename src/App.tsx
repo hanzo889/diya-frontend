@@ -1,6 +1,7 @@
 import React from "react";
 import Buku from "./components/Buku";
 import "./App.css";
+
 import BukuHub from "./components/BukuHub";
 import Anggota from "./components/Anggota";
 import Klasifikasi from "./components/Klasifikasi";
@@ -14,6 +15,20 @@ export default function App() {
       <Anggota />
       <Klasifikasi/>
       <Kategori/>
+
+import Pinjaman from "./components/Pinjaman";
+import Reservasi from "./components/Reservasi";
+import ListKondisi from "./components/ListKondisi";
+
+export default function App() {
+  return (
+    <div className="container">
+      <div className="navbar">ini navbar</div>
+      <Buku />
+      {/* <Pinjaman />
+      <Reservasi />
+      <ListKondisi /> */}
+
     </div>
   );
 }
