@@ -1,3 +1,8 @@
+
+.card {
+  /* border: 1px solid black; */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +28,7 @@ body {
   top: 0;
 }
 
+
 .form-buku {
   display: flex;
   flex-direction: column;
@@ -30,6 +36,9 @@ body {
   align-items: center;
   margin-top: 20px;
   gap: 15px;
+
+  border: 3px solid black;
+
   /* border: 3px solid black; */
   width: fit-content;
   padding: 20px;
@@ -38,12 +47,41 @@ body {
   color: #b2b0e8;
   border-radius: 20px;
   margin-bottom: 50px;
+
 }
 .label-buku {
   display: grid;
   text-align: center;
   gap: 5px;
 }
+
+.button-buku {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 30px;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+table{
+  width: 100%;
+}
+.buku_id{
+  text-align: center;
+}
+.buku_lki{
+  text-align: center;
+}
+.buku_judul{
+  text-align: center;
+}
+.buku_stock{
+  text-align: center;
+}
+
 .label-buku input {
   border-radius: 20px;
   border: 0px solid transparent;
@@ -83,3 +121,4 @@ td {
   border-collapse: collapse;
   text-align: center;
 }
+
