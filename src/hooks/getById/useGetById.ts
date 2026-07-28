@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import type { Buku } from "../../types/buku";
 // import type { RequestBuku } from "../../types/buku";
@@ -26,8 +27,7 @@ export const useGetById = (id: number) => {
         }
         const data = await response.json();
         setBuku(data);
-      } catch (err) {
-      } finally {
+      } catch (err) { /* empty */ } finally {
         setLoading(false);
       }
     };

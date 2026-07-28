@@ -18,6 +18,7 @@ export default function Buku() {
   const { deleteBuku, loading: laodingDelete } = useDelete(id);
   useEffect(() => {
     if (getIdLoading || !buku) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectBuku(buku);
   }, [buku, getIdLoading]);
   const handleCreate = async () => {
@@ -41,32 +42,21 @@ export default function Buku() {
   if (loading) return <div>loading...</div>;
   return (
     <>
-      {data!.map((buku, index) => (
-        <div className="card" key={index}>
-          <div>{buku.id}</div>
-          <div>{buku.judul}</div>
-          <div>{buku.list_kategori_id}</div>
-          <div>{buku.stock}</div>
-          <input
-            type="radio"
-            name="select"
-            // checked={id === buku.id}
-            id={buku.id.toString()}
-            onChange={() => setId(buku.id)}
-          />
-          <button
-            type="button"
-            onClick={() => {
-              handleDelete();
-            }}
-            disabled={laodingDelete}
-          >
-            hapus
-          </button>
-        </div>
-      ))}
-
-      <form className="form-buku" id="create" action={handleCreate}>
+      <ul>
+        <li>
+          <a href="default.asp">Home</a>
+        </li>
+        <li>
+          <a href="news.asp">Buku</a>
+        </li>
+        <li>
+          <a href="contact.asp">Contact</a>
+        </li>
+        <li>
+          <a href="about.asp">About</a>
+        </li>
+      </ul>
+       <form className="form-buku" id="create" action={handleCreate}>
         <label className="label-buku">
           judul:
           <input
@@ -111,7 +101,7 @@ export default function Buku() {
           post
         </button>
       </form>
-      <form className="form-buku" id="update" action={handleUpdate}>
+      {/* <form className="form-buku" id="update" action={handleUpdate}>
         <label className="label-buku">
           judul:
           <input
@@ -153,7 +143,47 @@ export default function Buku() {
           {loadingUpdate && <p>loading...</p>}
           update
         </button>
-      </form>
+      </form> */}
+      <table>
+            <tr>
+              <th>ID</th>
+              <th>Judul</th>
+              <th>List Kategori ID</th>
+              <th>Stock</th>
+            </tr>
+      {data!.map((buku, index) => (
+       
+          
+            <tr className="card" key={index}>
+              <td className="td-isi">{buku.id}</td>
+              <td className="td-isi">{buku.judul}</td>
+              <td className="td-isi">{buku.list_kategori_id}</td>
+              <td className="td-isi">{buku.stock}</td>
+            </tr>
+            
+         
+))}
+
+     </table>
+          {/* <input
+            type="radio"
+            name="select"
+            // checked={id === buku.id}
+            id={buku.id.toString()}
+            onChange={() => setId(buku.id)}
+          />
+          <button
+            type="button"
+            onClick={() => {
+              handleDelete();
+            }}
+            disabled={laodingDelete}
+          >
+            hapus
+          </button> */}
+       
+        
+      
     </>
   );
 }
