@@ -8,7 +8,7 @@ import Kategori from "./components/Kategori";
 
 export default function App() {
   return (
-    <div>
+    <div className="container">
       <Buku />
       <BukuHub />
       <Anggota />

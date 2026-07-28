@@ -41,119 +41,132 @@ export default function Buku() {
   if (loading) return <div>loading...</div>;
   return (
     <>
-      {data!.map((buku, index) => (
-        <div className="card" key={index}>
-          <div>{buku.id}</div>
-          <div>{buku.judul}</div>
-          <div>{buku.list_kategori_id}</div>
-          <div>{buku.stock}</div>
-          <input
-            type="radio"
-            name="select"
-            // checked={id === buku.id}
-            id={buku.id.toString()}
-            onChange={() => setId(buku.id)}
-          />
-          <button
-            type="button"
-            onClick={() => {
-              handleDelete();
-            }}
-            disabled={laodingDelete}
-          >
-            hapus
-          </button>
-        </div>
-      ))}
+      <div>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>JUDUL</th>
+            <th>LIST KATEGORI ID</th>
+            <th>STOCK</th>
+          </tr>
 
-      <form className="form-buku" id="create" action={handleCreate}>
-        <label className="label-buku">
-          judul:
-          <input
-            type="text"
-            value={requestCreate?.judul}
-            onChange={(e) => {
-              console.log(e.target);
-              setRequestCreate((b) => ({ ...b!, judul: e.target.value }));
-            }}
-          />
-        </label>
-        <label className="label-buku">
-          kategori:
-          <input
-            type="number"
-            value={requestCreate?.list_kategori_id}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setRequestCreate((b) => ({
-                ...b!,
-                list_kategori_id: Number(e.target.value),
-              }));
-            }}
-          />
-        </label>
-        <label className="label-buku">
-          {" "}
-          stock:
-          <input
-            type="number"
-            value={requestCreate?.stock}
-            onChange={(e) => {
-              setRequestCreate((b) => ({
-                ...b!,
-                stock: Number(e.target.value),
-              }));
-            }}
-          />
-        </label>
-        <button type="submit" className="button-buku">
-          {loadingCreate && <p>loading...</p>}
-          post
-        </button>
-      </form>
-      <form className="form-buku" id="update" action={handleUpdate}>
-        <label className="label-buku">
-          judul:
-          <input
-            type="text"
-            defaultValue={selectBuku?.judul || ""}
-            onChange={(e) => {
-              setRequestUpdate((b) => ({ ...b!, judul: e.target.value }));
-            }}
-          />
-        </label>
-        <label className="label-buku">
-          kategori:
-          <input
-            type="number"
-            defaultValue={selectBuku?.list_kategori_id}
-            onChange={(e) => {
-              setRequestUpdate((b) => ({
-                ...b!,
-                list_kategori_id: Number(e.target.value),
-              }));
-            }}
-          />
-        </label>
-        <label className="label-buku">
-          {" "}
-          stock:
-          <input
-            type="number"
-            defaultValue={selectBuku?.stock}
-            onChange={(e) => {
-              setRequestUpdate((b) => ({
-                ...b!,
-                stock: Number(e.target.value),
-              }));
-            }}
-          />
-        </label>
-        <button type="submit" className="button-buku">
-          {loadingUpdate && <p>loading...</p>}
-          update
-        </button>
-      </form>
+          {data!.map((buku, index) => (
+            <tr className="card" key={index}>
+              <td>{buku.id}</td>
+              <td>{buku.judul}</td>
+              <td>{buku.list_kategori_id}</td>
+              <td>{buku.stock}</td>
+            </tr>
+
+            // <input
+            //   type="radio"
+            //   name="select"
+            //   // checked={id === buku.id}
+            //   id={buku.id.toString()}
+            //   onChange={() => setId(buku.id)}
+            // />
+            // <button
+            //   type="button"
+            //   onClick={() => {
+            //     handleDelete();
+            //   }}
+            //   disabled={laodingDelete}
+            // >
+            //   hapus
+            // </button>
+          ))}
+        </table>
+      </div>
+      <div className="table">
+        <form className="form-buku" id="create" action={handleCreate}>
+          <label className="label-buku">
+            judul:
+            <input
+              type="text"
+              value={requestCreate?.judul}
+              onChange={(e) => {
+                console.log(e.target);
+                setRequestCreate((b) => ({ ...b!, judul: e.target.value }));
+              }}
+            />
+          </label>
+          <label className="label-buku">
+            kategori:
+            <input
+              type="number"
+              value={requestCreate?.list_kategori_id}
+              onChange={(e) => {
+                console.log(e.target.value);
+                setRequestCreate((b) => ({
+                  ...b!,
+                  list_kategori_id: Number(e.target.value),
+                }));
+              }}
+            />
+          </label>
+          <label className="label-buku">
+            {" "}
+            stock:
+            <input
+              type="number"
+              value={requestCreate?.stock}
+              onChange={(e) => {
+                setRequestCreate((b) => ({
+                  ...b!,
+                  stock: Number(e.target.value),
+                }));
+              }}
+            />
+          </label>
+          <button type="submit" className="button-buku">
+            {loadingCreate && <p>loading...</p>}
+            post
+          </button>
+        </form>
+        <form className="form-buku" id="update" action={handleUpdate}>
+          <label className="label-buku">
+            judul:
+            <input
+              type="text"
+              defaultValue={selectBuku?.judul || ""}
+              onChange={(e) => {
+                setRequestUpdate((b) => ({ ...b!, judul: e.target.value }));
+              }}
+            />
+          </label>
+          <label className="label-buku">
+            kategori:
+            <input
+              type="number"
+              defaultValue={selectBuku?.list_kategori_id}
+              onChange={(e) => {
+                setRequestUpdate((b) => ({
+                  ...b!,
+                  list_kategori_id: Number(e.target.value),
+                }));
+              }}
+            />
+          </label>
+          <label className="label-buku">
+            {" "}
+            stock:
+            <input
+              type="number"
+              defaultValue={selectBuku?.stock}
+              onChange={(e) => {
+                setRequestUpdate((b) => ({
+                  ...b!,
+                  stock: Number(e.target.value),
+                }));
+              }}
+            />
+          </label>
+          <button type="submit" className="button-buku">
+            {loadingUpdate && <p>loading...</p>}
+            update
+          </button>
+        </form>
+      </div>
     </>
   );
 }

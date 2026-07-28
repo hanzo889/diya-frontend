@@ -6,12 +6,18 @@ export default function Kategori() {
   if (loading) return <div>loading...</div>;
   return (
     <>
-      {data!.map((kategori, index) => (
-        <div className="card" key={index}>
-          <div>{kategori.id}</div>
-          <div>{kategori.kategori}</div>
-        </div>
-      ))}
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>KATEGORI</th>
+        </tr>
+        {data!.map((kategori, index) => (
+          <tr className="card" key={index}>
+            <td>{kategori.id}</td>
+            <td>{kategori.kategori}</td>
+          </tr>
+        ))}
+      </table>
     </>
   );
 }
