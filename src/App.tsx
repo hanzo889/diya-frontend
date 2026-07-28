@@ -7,11 +7,12 @@ import ListKondisi from "./components/ListKondisi";
 
 export default function App() {
   return (
-    <div>
+    <div className="container">
+      <div className="navbar">ini navbar</div>
       <Buku />
-      <Pinjaman />
+      {/* <Pinjaman />
       <Reservasi />
-      <ListKondisi />
+      <ListKondisi /> */}
     </div>
   );
 }

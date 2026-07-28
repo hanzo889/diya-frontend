@@ -41,31 +41,6 @@ export default function Buku() {
   if (loading) return <div>loading...</div>;
   return (
     <>
-      {data!.map((buku, index) => (
-        <div className="card" key={index}>
-          <div>{buku.id}</div>
-          <div>{buku.judul}</div>
-          <div>{buku.list_kategori_id}</div>
-          <div>{buku.stock}</div>
-          <input
-            type="radio"
-            name="select"
-            // checked={id === buku.id}
-            id={buku.id.toString()}
-            onChange={() => setId(buku.id)}
-          />
-          <button
-            type="button"
-            onClick={() => {
-              handleDelete();
-            }}
-            disabled={laodingDelete}
-          >
-            hapus
-          </button>
-        </div>
-      ))}
-
       <form className="form-buku" id="create" action={handleCreate}>
         <label className="label-buku">
           judul:
@@ -111,6 +86,44 @@ export default function Buku() {
           post
         </button>
       </form>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>JUDUL</th>
+          <th>KATEGORI</th>
+          <th>STOCK</th>
+          <th>RADIO</th>
+          <th>DELETE</th>
+        </tr>
+        {data!.map((buku, index) => (
+          <tr className="card" key={index}>
+            <td>{buku.id}</td>
+            <td>{buku.judul}</td>
+            <td>{buku.list_kategori_id}</td>
+            <td>{buku.stock}</td>
+            <td>
+              <input
+                type="radio"
+                name="select"
+                // checked={id === buku.id}
+                id={buku.id.toString()}
+                onChange={() => setId(buku.id)}
+              />
+            </td>
+            <td>
+              <button
+                type="button"
+                onClick={() => {
+                  handleDelete();
+                }}
+                disabled={laodingDelete}
+              >
+                hapus
+              </button>
+            </td>
+          </tr>
+        ))}
+      </table>
       <form className="form-buku" id="update" action={handleUpdate}>
         <label className="label-buku">
           judul:
