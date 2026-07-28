@@ -1,3 +1,12 @@
+
+import React from 'react'
+import Buku from './components/Buku'
+import "./App.css"
+// import Denda from './components/Denda'
+// import Petugas from './components/Petugas'
+// import Rak from './components/Rak'
+// import HargaBuku from './components/HargaBuku'
+
 import React from "react";
 import Buku from "./components/Buku";
 import "./App.css";
@@ -7,9 +16,17 @@ import Anggota from "./components/Anggota";
 import Klasifikasi from "./components/Klasifikasi";
 import Kategori from "./components/Kategori";
 
+
 export default function App() {
   return (
     <div>
+
+      <Buku/>
+      {/* <Denda/>
+      <Petugas/>
+      <Rak/>
+      <HargaBuku/> */}
+
       <Buku />
       <BukuHub />
       <Anggota />
@@ -28,6 +45,7 @@ export default function App() {
       {/* <Pinjaman />
       <Reservasi />
       <ListKondisi /> */}
+
 
     </div>
   );

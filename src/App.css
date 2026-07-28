@@ -1,13 +1,54 @@
 
+
 .card {
   /* border: 1px solid black; */
 }
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+}
+h2,
+p {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+table,
+th,
+td {
+  border: 0.1px solid #1a2a80;
+  color: white;
+}
+table {
+  width: 40%;
+  justify-self: center;
+  margin-top: 20px;
+}
+
 
 body {
   overflow-x: hidden;
@@ -29,15 +70,24 @@ body {
 }
 
 
+
 .form-buku {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-self: center;
   margin-top: 20px;
   gap: 15px;
 
   border: 3px solid black;
+
+  width: 500px;
+  height: 200px;
+  background-color: #1a2a80;
+  color: white;
+  border-radius: 20px;
+
 
   /* border: 3px solid black; */
   width: fit-content;
@@ -48,6 +98,7 @@ body {
   border-radius: 20px;
   margin-bottom: 50px;
 
+
 }
 .label-buku {
   display: grid;
@@ -55,12 +106,15 @@ body {
   gap: 5px;
 }
 
+
+
 .button-buku {
   background-color: black;
   color: white;
   width: 100px;
   height: 30px;
 }
+
 table,
 th,
 td {
@@ -121,4 +175,5 @@ td {
   border-collapse: collapse;
   text-align: center;
 }
+
 
