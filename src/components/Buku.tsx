@@ -39,10 +39,10 @@ export default function Buku() {
       stock: requestUpdate!.stock,
     });
   };
-  if (loading) return <div>loading...</div>;
+  console.log(data)
+  if (loading) return <div>loading....</div>;
   return(
      <>
-      <div>
         <table>
           <tr>
             <th>ID</th>
@@ -50,8 +50,7 @@ export default function Buku() {
             <th>LIST KATEGORI ID</th>
             <th>STOCK</th>
           </tr>
-
-          {data!.map((buku, index) => (
+          {data?.map((buku, index) => (
             <tr className="card" key={index}>
               <td>{buku.id}</td>
               <td>{buku.judul}</td>
@@ -60,7 +59,6 @@ export default function Buku() {
             </tr>
           ))}
         </table>
-      </div>
       <div className="table">
         <form className="form-buku" id="create" action={handleCreate}>
           <label className="label-buku">
@@ -151,77 +149,10 @@ export default function Buku() {
           </button>
         </form>
       </div>
-      <form className="form-buku" id="create" action={handleCreate}>
-        <label className="label-buku">
-          judul:
-          <input
-            type="text"
-            value={requestCreate?.judul}
-            onChange={(e) => {
-              console.log(e.target);
-              setRequestCreate((b) => ({ ...b!, judul: e.target.value }));
-            }}
-          />
-        </label>
-        <label className="label-buku">
-          kategori:
-          <input
-            type="number"
-            value={requestCreate?.list_kategori_id}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setRequestCreate((b) => ({
-                ...b!,
-                list_kategori_id: Number(e.target.value),
-              }));
-            }}
-          />
-        </label>
-        <label className="label-buku">
-          {" "}
-          stock:
-          <input
-            type="number"
-            value={requestCreate?.stock}
-            onChange={(e) => {
-              setRequestCreate((b) => ({
-                ...b!,
-                stock: Number(e.target.value),
-              }));
-            }}
-          />
-        </label>
-        <button type="submit" className="button-buku">
-          {loadingCreate && <p>loading...</p>}
-          post
-        </button>
-      </form>
-      
-      <table>
-            <tr>
-              <th>ID</th>
-              <th>Judul</th>
-              <th>List Kategori ID</th>
-              <th>Stock</th>
-            </tr>
-      {data!.map((buku, index) => (
-       
-          
-            <tr className="card" key={index}>
-              <td className="td-isi">{buku.id}</td>
-              <td className="td-isi">{buku.judul}</td>
-              <td className="td-isi">{buku.list_kategori_id}</td>
-              <td className="td-isi">{buku.stock}</td>
-            </tr>
-            
-         
-))}
-
-     </table>
-          <input
+          {/* <input
             type="radio"
             name="select"
-            id={buku.id.toString()}
+            id={buku?.id.toString()}
             onChange={() => setId(buku.id)}
           />
           <button
@@ -232,7 +163,7 @@ export default function Buku() {
             disabled={laodingDelete}
           >
             hapus
-          </button>
+          </button> */}
        
     </>
   )

@@ -6,7 +6,6 @@ import "./App.css"
 // import Petugas from './components/Petugas'
 // import Rak from './components/Rak'
 // import HargaBuku from './components/HargaBuku'
-import "./App.css";
 
 import BukuHub from "./components/BukuHub";
 import Anggota from "./components/Anggota";
@@ -22,10 +21,10 @@ export default function App() {
     <div className="container">
       <div className="navbar">ini navbar</div>
       <Buku />
-      <BukuHub />
+      {/* <BukuHub />
       <Anggota />
       <Klasifikasi/>
-      <Kategori/>
+      <Kategori/> */}
     </div>
   )
 }

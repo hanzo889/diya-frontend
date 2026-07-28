@@ -9,49 +9,6 @@
   gap: 50px;
 }
 
-.card {
-  border: 1px solid black;
-  width: 100%;
-}
-
-
-.card {
-  /* border: 1px solid black; */
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
-}
-h2,
-p {
-  margin: 10px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333333;
-  display: flex;
-}
-
-ul li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-ul li a:hover {
-  background-color: #111111;
-}
 table,
 th,
 td {
@@ -64,29 +21,7 @@ table {
   margin-top: 20px;
 }
 
-
-body {
-  overflow-x: hidden;
-}
-
-.container {
-  background-color: #b2b0e8;
-}
-
-.navbar {
-  width: 100vw;
-  height: 125px;
-  background-color: #1a2a80;
-  color: #b2b0e8;
-  text-align: center;
-  align-content: center;
-  position: sticky;
-  top: 0;
-}
-
-
-
-.form-buku {
+/* .form-buku {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,17 +29,12 @@ body {
   justify-self: center;
   margin-top: 20px;
   gap: 15px;
-
   border: 3px solid black;
-
   width: 500px;
   height: 200px;
   background-color: #1a2a80;
   color: white;
   border-radius: 20px;
-
-
-  /* border: 3px solid black; */
   width: fit-content;
   padding: 20px;
   justify-self: center;
@@ -112,10 +42,7 @@ body {
   color: #b2b0e8;
   border-radius: 20px;
   margin-bottom: 50px;
-
-
-
-}
+} */
 
 .label-buku {
   display: grid;
@@ -151,8 +78,6 @@ body {
   border-color: #ffffff;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
-
-
 
 
 
@@ -192,18 +117,7 @@ table {
   border-radius: 8px;
   overflow: hidden;
 }
-.buku_id {
-  text-align: center;
-}
-.buku_lki {
-  text-align: center;
-}
-.buku_judul {
-  text-align: center;
-}
-.buku_stock {
-  text-align: center;
-}
+
 th {
   background-color: #1a2a80;
   color: #ffffff;
